@@ -33,7 +33,7 @@ public class VehiculoServiceTest {
         vehiculo.setId(1L);
         vehiculo.setMarca("Toyota");
         vehiculo.setModelo("Corolla");
-        vehiculo.setAnio(2020);
+        vehiculo.setAnio("w");
         vehiculo.setColor("Blanco");
         vehiculo.setMatricula("ABC123");
 
