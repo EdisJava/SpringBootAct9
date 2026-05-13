@@ -1,0 +1,216 @@
+{
+  "info": {
+    "name": "Vehiculos API",
+    "_postman_id": "9f6e1e51-0a0d-4d57-8f6b-0a7c8f1f1d2a",
+    "description": "Coleccion para probar CRUD y busqueda avanzada de vehiculos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear vehiculo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"marca\": \"Toyota\",\n  \"modelo\": \"Corolla\",\n  \"anio\": 2020,\n  \"color\": \"Blanco\",\n  \"matricula\": \"ABC123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Listar todos",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos"]
+        }
+      }
+    },
+    {
+      "name": "Obtener por ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos/{{id}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos", "{{id}}"]
+        }
+      }
+    },
+    {
+      "name": "Actualizar",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos/{{id}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos", "{{id}}"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"marca\": \"Toyota\",\n  \"modelo\": \"Corolla\",\n  \"anio\": 2021,\n  \"color\": \"Negro\",\n  \"matricula\": \"ABC123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Eliminar",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos/{{id}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos", "{{id}}"]
+        }
+      }
+    },
+    {
+      "name": "Buscar por marca",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos/marca?valor={{marca}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos", "marca"],
+          "query": [
+            {"key": "valor", "value": "{{marca}}"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Buscar por modelo",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos/modelo?valor={{modelo}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos", "modelo"],
+          "query": [
+            {"key": "valor", "value": "{{modelo}}"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Buscar por anio",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos/anio?valor={{anio}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos", "anio"],
+          "query": [
+            {"key": "valor", "value": "{{anio}}"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Buscar por color",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos/color?valor={{color}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos", "color"],
+          "query": [
+            {"key": "valor", "value": "{{color}}"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Buscar por matricula",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos/matricula?valor={{matricula}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos", "matricula"],
+          "query": [
+            {"key": "valor", "value": "{{matricula}}"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Busqueda avanzada",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos/buscar?marca={{marca}}&modelo={{modelo}}&anio={{anio}}&color={{color}}&matricula={{matricula}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos", "buscar"],
+          "query": [
+            {"key": "marca", "value": "{{marca}}"},
+            {"key": "modelo", "value": "{{modelo}}"},
+            {"key": "anio", "value": "{{anio}}"},
+            {"key": "color", "value": "{{color}}"},
+            {"key": "matricula", "value": "{{matricula}}"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Validacion - sin matricula",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"marca\": \"Toyota\",\n  \"modelo\": \"Corolla\",\n  \"anio\": 2020,\n  \"color\": \"Blanco\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Validacion - anio invalido",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/vehiculos",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "vehiculos"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"marca\": \"Toyota\",\n  \"modelo\": \"Corolla\",\n  \"anio\": 1800,\n  \"color\": \"Blanco\",\n  \"matricula\": \"TEST123\"\n}"
+        }
+      }
+    }
+  ]
+}
+

@@ -43,6 +43,12 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- Validation (Jakarta) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
         <!-- Tests: incluye WebMvcTest, MockBean, Mockito, JUnit, etc. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
